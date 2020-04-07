@@ -10,7 +10,7 @@ const forecast = ({ longitude, latitude }, callback) => {
       callback("Something went wrong. Try one more time", undefined);
     } else {
       const { currently, daily } = body;
-      callback(undefined, `${daily.data[0].summary} It is currently ${currently.temperature} degress out. There is a ${currently.precipProbability}`);
+      callback(undefined, `${daily.data[0].summary} It is currently ${currently.temperature} degress out. There is a ${currently.precipProbability}. Wind speed: ${daily.data[0].windSpeed}`);
     }
   })
 }
